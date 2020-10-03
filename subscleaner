@@ -65,6 +65,8 @@ def ads_in_line(line):
 if __name__ == '__main__':
     from sys import argv
     from shutil import move
+    from os import path
+    import tempfile
 
     if '-h' in argv or len(argv) == 1:
         print('Usage: python3 cleaner.py <sub1> <sub2> <sub3> <...>')
@@ -82,6 +84,7 @@ if __name__ == '__main__':
                 print("Removing: "+str(line)+"\n")
                 del subs[i]
                 modified = True
-        if modified:
-            move(filename, filename+'.bak')
+        if modified
+            subs.clean_indexes()
+            move(filename, path.join(tempfile.gettempdir(), filename+'.bak'))1
             subs.save(filename)
